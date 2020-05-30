@@ -1,5 +1,5 @@
 <?php
-namespace FCodeDigital\PasswordHash;
+namespace FCodeDigital;
 
 class PasswordHash
 {
