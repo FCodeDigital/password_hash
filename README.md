@@ -3,30 +3,12 @@
 ##### Composer
 
 ```
-composer require fcodedigital/password-hash
+composer require fcodedigital/passwordhash
 ```
 
 # Como utilizar.
 ```
-$inputFilter->add(array(
-    'name'     => 'cpf',
-    'required' => true,
-    'filters'  => array(
-        array('name' => 'StripTags'),
-        array('name' => 'StringTrim'),
-    ),
-    'validators' => array(
-        array(
-            'name'    => 'StringLength',
-            'options' => array(
-                'encoding' => 'UTF-8',
-                'min'      => 11,
-                'max'      => 11,
-            ),
-        ),
-        array(
-            'name' => 'FCodeDigital\Validators\CPF'
-        ),
-    ),
-));
+$passwordhash = \FCodeDigital\PasswordHash\PasswordHash();
+$passwordhash->HashPassword('string');
+$passwordhash->CheckPassword('string', 'stored_hash');
 ```
